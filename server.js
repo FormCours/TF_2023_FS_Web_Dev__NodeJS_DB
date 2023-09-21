@@ -4,9 +4,13 @@ require('dotenv').config();
 // Import
 const http = require('http');
 const homeController = require('./controllers/home.controller');
+const dbUtils = require('./utils/db.utils');
 
 // Variable d'env
 const { PORT } = process.env;
+
+// Test la connexion vers la DB
+dbUtils.testDbConnection();
 
 // Création du serveur
 const server = http.createServer((request, response) => {
