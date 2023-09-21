@@ -8,6 +8,13 @@
 </head>
 <body>
     <h1>Liste des messages</h1>
-    TODO : A faire!
+    <a href="/message-add">Ajouter un message</a>
+    <ul>
+        <% messages.forEach(msg => { %>
+            <li>
+                [<%=msg.createDate.toLocaleString('fr-be')%>] <%=msg.pseudo%> : <%=msg.content%>
+            </li>
+        <% }) %>
+    </ul>
 </body>
 </html>
